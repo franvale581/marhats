@@ -11,6 +11,10 @@ const total = document.querySelector('.total');
 const buyBtn = document.querySelector('.btn-buy');
 const deleteBtn = document.querySelector('.btn-delete');
 const cartBubble = document.querySelector('.cart-bubble');
+const closeCartBtn = document.querySelector('.cart-close-btn');
+const closeMenuBtn = document.querySelector('.menu-close-btn');
+
+
 
 //loader 
 window.addEventListener('load', () => {
@@ -22,6 +26,16 @@ window.addEventListener('load', () => {
       loader.style.display = 'none';
     }, 1000);
   }, 3000);
+});
+
+closeCartBtn.addEventListener("click", () => {
+  cartMenu.classList.remove("open-cart");
+  overlay.classList.remove("show-overlay");
+});
+
+closeMenuBtn.addEventListener("click", () => {
+  barsMenu.classList.remove("open");
+  overlay.classList.remove("show-overlay");
 });
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];

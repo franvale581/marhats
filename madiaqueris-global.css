@@ -1,0 +1,351 @@
+@media (max-width: 900px) {
+    .footer-top-container {
+        padding: 2rem 3rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .footer-top-container {
+        padding: 2rem 1rem;
+    }
+
+    .footer-logo h3 {
+        color: var(--white-grey);
+        font-family: "Teko", sans-serif;
+        font-size: 2.8rem;
+        font-style: italic;
+    }
+
+    .footer-mid-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+
+    .footer-mid-title h3 {
+        color: #b8b8b8;
+        font-family: "Teko", sans-serif;
+        font-weight: 100;
+        font-size: 1.6rem;
+        font-style: italic;
+    }
+
+    .payment-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        margin-top: 1rem;
+    }
+
+    .payment-container li img {
+        width: 50px;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 465px) {
+
+    .products-section-title h2 {
+        font-family: "Teko", sans-serif;
+        color: var(--white-grey);
+        font-weight: 400;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-style: italic;
+    }
+
+
+    .product {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Teko", sans-serif;
+        color: var(--white-grey);
+        background: rgba(46, 43, 43, 0.363);
+        padding: 2rem 1rem;
+        border-radius: 2px;
+    }
+
+    .product-img {
+        height: 12rem;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: .2s ease-out;
+    }
+
+    .product-img:hover {
+        transform: scale(1.03);
+        transition: .2s ease-in-out;
+    }
+
+    .product-text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    .product-name {
+        font-weight: 400;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    .created-by-product {
+        font-weight: 100;
+        margin-top: -10px;
+        font-style: italic;
+        color: rgba(236, 236, 236, 0.918);
+        font-size: 1.1rem;
+    }
+
+    .product-price {
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: rgba(255, 255, 255, 0.877);
+    }
+
+    .btn-add {
+        cursor: pointer;
+        padding: 2px 28px;
+        height: 2rem;
+        color: var(--white-grey);
+        border-radius: 15px;
+        border: none;
+        transition: 0.3s all ease-out;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-family: "Teko", sans-serif;
+        text-transform: uppercase;
+    }
+
+    /* modal de agregado */
+
+    .add-modal {
+        font-family: "Teko", sans-serif;
+        position: fixed;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--white-grey);
+        color: var(--bg-black);
+        padding: .5rem 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        transition: bottom 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        z-index: 9999;
+        font-size: .8rem;
+        text-align: center;
+    }
+
+        .footer-top-container {
+        padding: 2rem 1rem;
+    }
+
+    .footer-logo h3 {
+        color: var(--white-grey);
+        font-family: "Teko", sans-serif;
+        font-size: 2.2rem;
+        font-style: italic;
+    }
+
+    .social-links-container {
+        gap: 1px;
+    }
+
+    .social-link svg {
+        height: 18px;
+    }
+
+    .footer-mid-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+
+    .footer-mid-title h3 {
+        color: #b8b8b8;
+        font-family: "Teko", sans-serif;
+        font-weight: 100;
+        font-size: 1.6rem;
+        font-style: italic;
+    }
+
+    .payment-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        margin-top: 1rem;
+    }
+
+    .payment-container li img {
+        width: 50px;
+        height: auto;
+        display: block;
+    }
+}
+
+
+@media (max-width: 340px) {
+    .products-section-title h2 {
+        font-family: "Teko", sans-serif;
+        color: var(--white-grey);
+        font-weight: 400;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-style: italic;
+    }
+
+
+    .product {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Teko", sans-serif;
+        color: var(--white-grey);
+        background: rgba(46, 43, 43, 0.363);
+        padding: 2rem 1rem;
+        border-radius: 2px;
+    }
+
+    .product-img {
+        height: 12rem;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: .2s ease-out;
+    }
+
+    .product-img:hover {
+        transform: scale(1.03);
+        transition: .2s ease-in-out;
+    }
+
+    .product-text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    .product-name {
+        font-weight: 400;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    .created-by-product {
+        font-weight: 100;
+        margin-top: -10px;
+        font-style: italic;
+        color: rgba(236, 236, 236, 0.918);
+        font-size: 1.1rem;
+    }
+
+    .product-price {
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: rgba(255, 255, 255, 0.877);
+    }
+
+    .btn-add {
+        cursor: pointer;
+        padding: 2px 28px;
+        height: 2rem;
+        color: var(--white-grey);
+        border-radius: 15px;
+        border: none;
+        transition: 0.3s all ease-out;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-family: "Teko", sans-serif;
+        text-transform: uppercase;
+    }
+
+    /* modal de agregado */
+
+    .add-modal {
+        font-family: "Teko", sans-serif;
+        position: fixed;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--white-grey);
+        color: var(--bg-black);
+        padding: .5rem 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        transition: bottom 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        z-index: 9999;
+        font-size: .8rem;
+        text-align: center;
+    }
+
+        .footer-top-container {
+        padding: 2rem 1rem;
+    }
+
+    .footer-logo h3 {
+        color: var(--white-grey);
+        font-family: "Teko", sans-serif;
+        font-size: 2.2rem;
+        font-style: italic;
+    }
+
+    .social-links-container {
+        gap: 1px;
+    }
+
+    .social-link svg {
+        height: 18px;
+    }
+
+    .footer-mid-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+
+    .footer-mid-title h3 {
+        color: #b8b8b8;
+        font-family: "Teko", sans-serif;
+        font-weight: 100;
+        font-size: 1.6rem;
+        font-style: italic;
+    }
+
+    .payment-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        margin-top: 1rem;
+    }
+
+    .payment-container li img {
+        width: 50px;
+        height: auto;
+        display: block;
+    }
+}
