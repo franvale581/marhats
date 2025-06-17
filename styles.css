@@ -752,18 +752,20 @@ background-color: #08090a;
 }
 
 
-    .info-wrapper {
-      width: 900px;
-      margin: 50px auto;
-      padding: 2rem;
-      border-radius: 16px;
-      color: #e0e1dd;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: "Teko", sans-serif;
-    }
+.info-wrapper {
+  max-width: 900px;
+  width: 90%;
+  margin: 50px auto;
+  padding: 2rem;
+  border-radius: 16px;
+  color: #e0e1dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Teko", sans-serif;
+  animation: fadeInUp 0.8s ease-out both;
+}
 
     .info-wrapper h1 {
       font-size: 2.5rem;
