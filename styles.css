@@ -753,7 +753,7 @@ background-color: #08090a;
 
 
     .info-wrapper {
-      max-width: 900px;
+      width: 900px;
       margin: 50px auto;
       padding: 2rem;
       border-radius: 16px;
