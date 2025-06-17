@@ -169,3 +169,45 @@
     }
 
 }
+
+
+@media screen and (max-width: 600px) {
+  .info-wrapper {
+    width: 95%;
+    padding: 1.5rem 1rem;
+  }
+
+  .info-wrapper h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .info-wrapper h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .info-wrapper p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .info-wrapper .info-images {
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .info-wrapper .info-images img {
+    width: 100px;
+  }
+
+  .info-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .info-wrapper a {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+}
