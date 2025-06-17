@@ -92,7 +92,8 @@ const renderProducts = () => {
         <h2 class="created-by-product">${brand}</h2>
         <p class="product-price">$${price.toFixed(2)}</p>
       </div>
-      <button class="btn-add" data-id="${id}">añadir</button>
+      <button class="btn-add" data-id="${id}">Añadir</button>
+      <button class="btn-info" data-id="${id}">Info</button>
     </div>
   `).join("");
 };
@@ -269,10 +270,10 @@ navbarLinks.forEach(link => link.addEventListener("click", closeOnClick));
 overlay.addEventListener("click", closeOnOverlayClick);
 
 productsContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-add")) {
+  if (e.target.classList.contains("btn-info")) {
     const id = Number(e.target.dataset.id);
-    const selectedProduct = gorras.find(p => p.id === id);
-    if (selectedProduct) addProduct(selectedProduct);
+    localStorage.setItem("selectedProductId", id);
+    window.location.href = "info.html";
   }
 });
 

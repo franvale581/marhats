@@ -1,0 +1,40 @@
+<!-- info.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mar Hats</title>
+  <link rel="stylesheet" href="styles.css"> <!-- si tenés uno -->
+  <link rel="shortcut icon" href="./assets/logo/logo_transparent.png" type="image/x-icon">
+</head>
+<body>
+  <div id="info-product"></div>
+
+  <script src="data.js"></script>
+  <script>
+    const container = document.getElementById("info-product");
+    const productId = localStorage.getItem("selectedProductId");
+
+    const product = gorras.find(p => p.id == productId);
+
+    if (product) {
+      container.innerHTML = `
+        <div class="info-wrapper">
+          <a href="index.html">VOLVER</a>
+          <h1>${product.name}</h1>
+          <h3>${product.brand}</h3>
+          <img src="${product.img}" alt="${product.name}" width="300" />
+          <p>Precio: $${product.price}</p>
+          <p>${product.descripcion || 'Descripción no disponible'}</p>
+          <div class="info-images">
+            ${(product.imagenesInfo || []).map(img => `<img src="${img}" width="150" />`).join('')}
+          </div>
+
+        </div>
+      `;
+    } else {
+      container.innerHTML = "<p>Producto no encontrado</p>";
+    }
+  </script>
+</body>
+</html>
