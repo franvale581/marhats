@@ -5,7 +5,6 @@ const cartIcon = document.querySelector('.cart-icon');
 const cartMenu = document.querySelector('.cart');
 const overlay = document.getElementById('overlay');
 const navbarLinks = document.querySelectorAll('.navbar-link');
-const addToCartBtns = document.querySelectorAll('.btn-add');
 const productsCart = document.querySelector('.cart-container');
 const total = document.querySelector('.total');
 const buyBtn = document.querySelector('.btn-buy');
@@ -13,13 +12,11 @@ const deleteBtn = document.querySelector('.btn-delete');
 const cartBubble = document.querySelector('.cart-bubble');
 const closeCartBtn = document.querySelector('.cart-close-btn');
 const closeMenuBtn = document.querySelector('.menu-close-btn');
+const productsContainer = document.querySelector(".products-container");
 
-
-
-//loader 
+// loader 
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
-
   setTimeout(() => {
     loader.classList.add('fade-out');
     setTimeout(() => {
@@ -79,10 +76,6 @@ const closeOnOverlayClick = () => {
   overlay.classList.remove("show-overlay");
 };
 
-// product render
-
-const productsContainer = document.querySelector(".products-container");
-
 const renderProducts = () => {
   productsContainer.innerHTML = gorras.map(({ id, name, brand, price, img }) => `
     <div class="product">
@@ -97,7 +90,6 @@ const renderProducts = () => {
     </div>
   `).join("");
 };
-
 
 const saveCart = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -146,8 +138,8 @@ const getEffectivePrice = (product) => {
 
 const showAddModal = () => {
   const modal = document.querySelector('.add-modal');
+  if (!modal) return;
   modal.classList.add('active-modal');
-
   setTimeout(() => {
     modal.classList.remove('active-modal');
   }, 2000);
@@ -203,17 +195,6 @@ const resetCartItems = () => {
   updateCartState();
 };
 
-// const completeCartAction = (confirmMsg, successMsg) => {
-//   if (!cart.length) return;
-//   if (window.confirm(confirmMsg)) {
-//     resetCartItems();
-//     alert(successMsg);
-//   }
-// };
-
-// const completeBuy = () => completeCartAction("¿Desea completar su compra?", "¡Gracias por su compra!");
-// const deleteCart = () => completeCartAction("¿Desea vaciar el carrito?", "No hay productos en el carrito");
-
 const getTotal = () => {
   return cart.reduce((acc, cur) => acc + Number(getEffectivePrice(cur)) * cur.quantity, 0);
 };
@@ -221,30 +202,24 @@ const getTotal = () => {
 const createWhatsappMessage = () => {
   const phoneNumber = "13182676007"
   const total = getTotal();
-
-
   const message = cart.map(
     (item) => `- *${item.quantity} x ${item.name} ($${getEffectivePrice(item)})*`
   ).join("\n");
 
   const finalMessage = `Hola, quisiera comprar los siguientes productos:\n${message}\n*Total: $${total.toFixed(2)}.*`;
-
-
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
 };
 
 const completeBuy = () => {
   if (!cart.length) return;
-
   const whatsappURL = createWhatsappMessage();
   window.open(whatsappURL, "_blank");
-}
+};
 
 const deleteCart = () => {
   if (!cart.length) return;
   resetCartItems();
-}
-
+};
 
 const disableBtn = (btn) => {
   btn.classList.toggle("disabled", !cart.length);
@@ -274,6 +249,11 @@ productsContainer.addEventListener("click", (e) => {
     const id = Number(e.target.dataset.id);
     localStorage.setItem("selectedProductId", id);
     window.location.href = "info.html";
+  }
+  if (e.target.classList.contains("btn-add")) {
+    const id = Number(e.target.dataset.id);
+    const product = gorras.find(p => p.id === id);
+    if (product) addProduct(product);
   }
 });
 
