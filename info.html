@@ -14,29 +14,40 @@
 
   <script src="data.js"></script>
   <script>
-    const container = document.getElementById("info-product");
-    const productId = localStorage.getItem("selectedProductId");
+  const container = document.getElementById("info-product");
+  const productId = localStorage.getItem("selectedProductId");
 
-    const product = gorras.find(p => p.id == productId);
+  const product = gorras.find(p => p.id == productId);
 
-    if (product) {
-      container.innerHTML = `
-        <div class="info-wrapper">
-          <a href="index.html">VOLVER</a>
-          <h1>${product.name}</h1>
-          <h3>${product.brand}</h3>
-          <img src="${product.img}" alt="${product.name}" width="300" />
-          <p>Precio: $${product.price}</p>
-          <p>${product.descripcion || 'Descripción no disponible'}</p>
-          <div class="info-images">
-            ${(product.imagenesInfo || []).map(img => `<img src="${img}" width="150" />`).join('')}
-          </div>
-
+  if (product) {
+    container.innerHTML = `
+      <div class="info-wrapper">
+        <a href="index.html">VOLVER</a>
+        <h1>${product.name}</h1>
+        <h3>${product.brand}</h3>
+        <img id="main-image" src="${product.img}" alt="${product.name}" width="300" />
+        <p>Precio: $${product.price}</p>
+        <p>${product.descripcion || 'Descripción no disponible'}</p>
+        <div class="info-images">
+          ${(product.imagenesInfo || []).map(img => `<img class="thumb" src="${img}" width="150" />`).join('')}
         </div>
-      `;
-    } else {
-      container.innerHTML = "<p>Producto no encontrado</p>";
-    }
-  </script>
+      </div>
+    `;
+
+    // Una vez que el HTML está cargado, añadimos el evento a las miniaturas
+    const thumbs = container.querySelectorAll('.thumb');
+    const mainImage = container.querySelector('#main-image');
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImage.src = thumb.src;
+      });
+    });
+
+  } else {
+    container.innerHTML = "<p>Producto no encontrado</p>";
+  }
+</script>
+
 </body>
 </html>
